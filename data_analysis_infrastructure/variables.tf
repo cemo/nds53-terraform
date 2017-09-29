@@ -8,7 +8,7 @@ variable "aws" {
 
 variable "google" {
   default = {
-    credentials = "" # file path
+    credentials = "credentials.json"
     project     = ""
     region      = ""
   }
@@ -21,6 +21,6 @@ variable "service_name" {
 variable "bq" {
   default = {
     table_id = "myapp"
-    credentials = "" # file path
+    credentials = "credentials.json"
   }
 }
