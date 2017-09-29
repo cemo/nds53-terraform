@@ -1,0 +1,5 @@
+[
+  { "name": "time",  "type": "timestamp", "mode": "required" },
+  { "name": "tag",  "type": "string",    "mode": "required" },
+  { "name": "value", "type": "float",     "mode": "required" }
+]
