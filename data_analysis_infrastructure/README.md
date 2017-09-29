@@ -58,7 +58,7 @@
 * BigQueryでデータを確認
 
     ```
-    SELECT count(id) FROM [PROJECT:DATASET.TABLE];
+    SELECT count(time) FROM [PROJECT:DATASET.TABLE];
     ```
 
 うまくいかない場合はLambdaのログを確認する。
