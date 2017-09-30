@@ -6,6 +6,6 @@ resource "aws_kms_alias" "main" {
 }
 
 data "aws_kms_ciphertext" "bq_credentials" {
-  key_id = "${aws_kms_key.main.id}"
+  key_id    = "${aws_kms_key.main.id}"
   plaintext = "${file(var.bq["credentials"])}"
 }

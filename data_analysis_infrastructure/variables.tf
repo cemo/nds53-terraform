@@ -20,7 +20,7 @@ variable "service_name" {
 
 variable "bq" {
   default = {
-    table_id = "myapp"
+    table_id    = "myapp"
     credentials = "credentials.json"
   }
 }
