@@ -39,13 +39,15 @@
 
 ## テスト
 
+$KINESIS_STREAM と $BIGQUERY は `terrarofm apply` の結果で置き換えてください。
+
 * Kinesisにデータを投入
 
     データ作成
 
     ```
     $ TEST_JSON=$(mktemp)
-    $ test/gen_kinesis_records.sh $KINESIS_STREAM_NAME >$TEST_JSON # デフォルトで300レコードのデータを作成
+    $ test/gen_kinesis_records.sh $KINESIS_STREAM >$TEST_JSON # デフォルトで300レコードのデータを作成
     $ cat $TEST_JSON | jq . -C | less -R
     ```
 
@@ -58,7 +60,7 @@
 * BigQueryでデータを確認
 
     ```
-    SELECT count(time) FROM [PROJECT:DATASET.TABLE];
+    bq query "SELECT count(time) FROM $BIGQUERY"
     ```
 
 うまくいかない場合はLambdaのログを確認する。
