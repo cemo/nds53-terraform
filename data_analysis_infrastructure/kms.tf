@@ -1,6 +1,6 @@
 resource "aws_kms_key" "main" {}
 
-resource "aws_kms_alias" "bq_credentials" {
+resource "aws_kms_alias" "main" {
   name          = "alias/${var.service_name}-${terraform.workspace}"
   target_key_id = "${aws_kms_key.main.key_id}"
 }
