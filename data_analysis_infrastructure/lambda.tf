@@ -11,6 +11,7 @@ resource "aws_lambda_function" "kinesis2bq" {
   handler          = "kinesis2bq.handler"
   source_code_hash = "${data.archive_file.kinesis2bq.output_base64sha256}"
   runtime          = "python2.7"
+  timeout          = 60
 
   # NOTE: キーを含めて4KBまで
   environment {
